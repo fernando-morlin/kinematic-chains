@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinematic Chain Drawing Canvas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script> <!-- Include D3.js -->
+</head>
+<body>
+
+<div id="container">
+    <div id="title-section">
+        <h1>Kinematic Chain</h1>
+        <h2>Drawing Canvas</h2>
+    </div>
+    <div id="main-area">
+        <div id="drawing-canvas-container">
+          <input type="text" id="input-label" placeholder="Link Label" />
+            <!-- Load JSON Button and File Input -->
+          <button id="load-json">Load JSON</button>
+          <input type="file" id="json-file" accept=".json" style="display:none;">
+          <button id="clear-canvas">Clear Canvas</button>
+          <svg id="drawing-canvas">
+              <g id="links-group"></g>
+              <g id="labels-group"></g>
+              <g id="connections-group"></g>
+              <circle id="snap-indicator" class="snap-indicator"></circle>
+          </svg>
+            <div id="connections-list">
+                <h3>Connections:</h3>
+                <ul id="connections"></ul>
+            </div>
+        </div>
+
+        <div id="link-selector">
+            <button id="add-link-button" disabled>Add selected link</button>
+            <div id="link-options">
+                <!-- Link options will be added here -->
+            </div>
+        </div>
+
+        <div id="graph-panel-container">
+            <button id="generate-button" disabled>Generate graph representation</button>
+            <svg id="graph-canvas"></svg>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
